@@ -90,6 +90,8 @@ GROUP=webapplication
 NUM_WORKERS=4
 DJANGO_WSGI_MODULE=testdev:wsgi
 
+source venv/bin/active
+
 cd /opt/test/scrapapi_by_price
 gunicorn ${DJANGO_WSGI_MODULE}:application \
     --name $NAME \
@@ -154,7 +156,8 @@ setsebool -P httpd_can_network_connect 1
 ## Creando el virtual enviroment
 
 ```
-python3.6 -m venv /path/to/new/virtual/environment
+python3.6 -m venv /opt/test/envs/test
+ln -s /opt/test/envs/ /opt/test/scrapapi_by_price/venv
 ```
 
 ```sh
