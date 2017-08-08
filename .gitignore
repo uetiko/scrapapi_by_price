@@ -1,0 +1,22 @@
+# Enviroments
+venv/
+venv
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# pyenv
+.python-version
+
+#vim
+
+**/.*.sw[opn]
+
+#IDE
+.idea/
+.ropeproject/
+
+#start enviroments
+dev_start.sh
