@@ -157,7 +157,7 @@ setsebool -P httpd_can_network_connect 1
 
 ```
 python3.6 -m venv /opt/test/envs/test
-ln -s /opt/test/envs/ /opt/test/scrapapi_by_price/venv
+ln -s /opt/test/envs/test /opt/test/scrapapi_by_price/venv
 ```
 
 ```sh
