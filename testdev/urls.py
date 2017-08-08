@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from scrap.viewsets import ItemsAPI
+from scrap.viewsets import ItemSKUAPI
+from scrap.viewsets import ItemPriceAPI
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^items/$', ItemsAPI.as_view()),
+    url(r'^items/(?P<sku>.+?)/$', ItemSKUAPI.as_view()),
+    url(r'^items/(?P<price>.+?)/$', ItemPriceAPI.as_view())
 ]
