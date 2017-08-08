@@ -128,6 +128,8 @@ USE_TZ = True
 
 STATIC_ROOT = os.getenv('STATIC_ROOT')
 
+STATIC_URL = '/static/'
+
 EMAIL_HOST = os.getenv('EMAIL_HOST')
 
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
