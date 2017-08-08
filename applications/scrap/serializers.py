@@ -18,11 +18,10 @@ class PlaceSerializer(serializers.ModelSerializer):
 
 
 class ItemSerializer(serializers.ModelSerializer):
-    place = PlaceSerializer(many=True, read_only=True)
 
     class Meta:
         model = Item
         fields = (
-            'place', 'upc', 'name', 'product_page',
+            'upc', 'name', 'product_page',
             'price', 'image', 'description',
         )
