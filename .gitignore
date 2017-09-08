@@ -20,3 +20,6 @@ __pycache__/
 
 #start enviroments
 dev_start.sh
+
+.cache/*
+log/*
