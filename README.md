@@ -6,7 +6,7 @@ Requerimientos:
 - Nginx
 - supervisor
 
-##Contenido
+## Contenido
 - commons
 - Instalando python
 - Instalando y configurando Nginx
@@ -42,6 +42,8 @@ $ useradd --system --gid webapplication -d /home/jenkins -s /bin/zsh jenkins
 ### Creando el directorio de trabajo para test
 Una buena practica es hacer un directorio en el cual deba estar el proyecto/proceso y que este bajo el usuario y grupo de sistema creado. En este caso lo pondremos en `opt`, aunque bien podría esta en el home de jenkins o en `usr`. El lugar depende de cada uno y de que es lo que se deba poner. Si hablamos de crear un ejecutable, deberia estar en [/usr/sbin] si es de sistema, claro esta.
 ```
+
+```
 $ mkdir -p /opt/test/scrapapi_by_price
 $ mkdir -p /opt/test/run/
 $ mkdir -p /opt/test/envs/
@@ -49,6 +51,7 @@ $ mkdir -p /var/www/test/by_price/static
 $ chown -R jenkins:webapplication /opt/test
 $ chown -R www-data:webapplication /var/www/
 $ chmod -R 771 /var/www/
+```
 
 
 ## Configurando supervisor
@@ -86,6 +89,8 @@ USER=jenkins
 GROUP=webapplication
 NUM_WORKERS=4
 DJANGO_WSGI_MODULE=testdev:wsgi
+
+source venv/bin/active
 
 cd /opt/test/scrapapi_by_price
 gunicorn ${DJANGO_WSGI_MODULE}:application \
@@ -151,7 +156,8 @@ setsebool -P httpd_can_network_connect 1
 ## Creando el virtual enviroment
 
 ```
-python3.6 -m venv /path/to/new/virtual/environment
+python3.6 -m venv /opt/test/envs/test
+ln -s /opt/test/envs/test /opt/test/scrapapi_by_price/venv
 ```
 
 ```sh
