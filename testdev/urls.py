@@ -27,5 +27,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^items/$', ItemsAPI.as_view()),
     url(r'^items/(?P<sku>.+?)/$', ItemSKUAPI.as_view()),
-    url(r'^items/price/(?P<price>\d+\.\d{2})/$', ItemPriceAPI.as_view())
+    url(r'^item/price/(?P<price>\d+\.\d{2})/$', ItemPriceAPI.as_view())
 ]
