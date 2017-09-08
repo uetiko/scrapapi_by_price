@@ -16,7 +16,7 @@ Requerimientos:
 ```sh
 yum install openssl-libs
 lsb_release -a
-yum insall alternatives
+yum install alternatives
 yum install nginx
 ```
 
