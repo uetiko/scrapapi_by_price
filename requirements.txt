@@ -14,5 +14,6 @@ django_redis==4.8.0
 django-suit==0.2.25
 PyYAML==3.12
 pytest
-ptest-django
+pytest-django
 pytest-cov
+mixer
