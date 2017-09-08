@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 from django.db import models
 
 # Create your models here.
@@ -5,8 +6,8 @@ from django.db import models
 
 class Market(models.Model):
     name = models.CharField(
-        max_length = 15,
-        verbose_name = 'tienda'
+        max_length=15,
+        verbose_name='tienda'
     )
 
 
@@ -19,8 +20,8 @@ class Place(models.Model):
         on_delete=models.CASCADE
     )
     name = models.CharField(
-        max_length = 15,
-        verbose_name = 'lugar'
+        max_length=15,
+        verbose_name='lugar'
     )
 
     class Meta:
@@ -75,4 +76,3 @@ class Item(models.Model):
 
     def __str__(self):
         return super(self.__class__, self).__str__()
-
