@@ -22,7 +22,6 @@ from rest_framework_nested import routers
 
 
 router = routers.DefaultRouter()
-#router.register(r'^items/$', ItemsViewSet)
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^items/$', ItemsAPI.as_view()),
