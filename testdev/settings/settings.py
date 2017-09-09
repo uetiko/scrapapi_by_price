@@ -33,7 +33,15 @@ DEBUG = strtobool(os.getenv('DEBUG'))
 ALLOWED_HOSTS = [os.getenv('URL_HOST')]
 
 DATABASES = {
-    'default' : {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': 3306,
+    },
+    'TEST': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': os.getenv('DB_NAME'),
         'USER': os.getenv('DB_USER'),
