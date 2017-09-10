@@ -22,9 +22,11 @@ class TestItems(object):
         response = ItemSKUAPI.as_view()(request, sku=750129930486)
         response.render()
         assert isinstance(response.content, bytes), 'error'
+        assert response.status_code is 200, 'error in the endpoint'
 
     def test_item_price(self):
         request = RequestFactory().get('/item/price/283.00/')
         response = ItemPriceAPI.as_view()(request, price=283.00)
         response.render()
         assert isinstance(response.content, bytes), 'error'
+        assert response.status_code is 200
