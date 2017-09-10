@@ -1,7 +1,5 @@
-import pytest
 from django.test import RequestFactory
 from scrap.viewsets import ItemsAPI, ItemSKUAPI, ItemPriceAPI
-pytestmark = pytest.mark.django_db
 
 
 class TestItems(object):
