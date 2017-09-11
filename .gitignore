@@ -26,3 +26,4 @@ log/*
 htmlcov/*
 **/*.json
 .coverage
+node_modules/*
