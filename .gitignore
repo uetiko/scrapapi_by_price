@@ -23,3 +23,6 @@ dev_start.sh
 
 .cache/*
 log/*
+htmlcov/*
+**/*.json
+.coverage
