@@ -24,6 +24,7 @@ dev_start.sh
 .cache/*
 log/*
 htmlcov/*
-**/*.json
+**/data.json
 .coverage
 node_modules/*
+package-lock.json
