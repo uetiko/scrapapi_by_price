@@ -25,6 +25,8 @@ class ItemSKUAPI(APIView):
 class ItemPriceAPI(APIView):
     def get(self, request, price):
         return Response(ItemSerializer(
-            Item.objects.filter(price=float(price)), many=True).data,
+            Item.objects.filter(
+                price__lte=float(price)
+            ).order_by('-price'), many=True).data,
             status=status.HTTP_200_OK
         )
